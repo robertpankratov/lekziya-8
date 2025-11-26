@@ -1,0 +1,82 @@
+body {
+    background: #e3e3e3;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    font-family: Arial, sans-serif;
+}
+
+.game-area {
+    width: 400px;
+    height: 600px;
+    position: relative;
+    border: 2px solid #000;
+    background: #b3d9ff;
+    overflow: hidden;
+}
+
+.sky {
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(#9cd3ff, #b3d9ff);
+    position: absolute;
+    top: 0;
+}
+
+.ground {
+    width: 100%;
+    height: 30%;
+    background: #5abf62;
+    position: absolute;
+    bottom: 0;
+}
+
+.player {
+    width: 60px;
+    height: 60px;
+    background: #3a7afe;
+    border-radius: 50%;
+    position: absolute;
+    left: 170px;
+    top: 450px;
+    animation: pulse 1.5s infinite;
+}
+
+.obstacle {
+    width: 80px;
+    height: 30px;
+    background: #ff4d4d;
+    position: absolute;
+    top: 150px;
+    left: 120px;
+    animation: moveDown 3s linear infinite;
+}
+
+.bonus {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 40px solid #ffd633;
+    position: absolute;
+    top: 300px;
+    left: 180px;
+    animation: blink 1s infinite;
+}
+
+@keyframes moveDown {
+    from { top: -50px; }
+    to { top: 650px; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
